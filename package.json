@@ -1,0 +1,26 @@
+{
+  "name": "giovannilaperna-blog",
+  "scripts": {
+    "dev": "nuxt",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.1.96",
+    "@nuxt/content": "^1.15.1",
+    "@nuxtjs/i18n": "^7.2.2",
+    "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "cookie": "^0.5.0",
+    "dotenv": "^16.0.3",
+    "lodash.flatten": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
+    "nuxt": "^2.15.8",
+    "nuxt-buefy": "^0.4.25",
+    "nuxt-content-git": "^2.0.14"
+  },
+  "devDependencies": {
+    "sass": "^1.52.1",
+    "sass-loader": "^10.2.1"
+  }
+}
