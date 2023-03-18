@@ -15,9 +15,7 @@
           {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
         </div>
       </section>
-      <section class="section">
-        <blog-toc :toc="post.toc" />
-      </section>
+      <blog-toc :toc="post.toc" />
       <section class="section">
         <div class="content">
           <nuxt-content :document="post" />
