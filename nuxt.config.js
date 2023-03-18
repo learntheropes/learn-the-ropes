@@ -108,8 +108,8 @@ export default {
   },
 
   env: {
-    BASE_URL: (process.env.URL) ? `https://${process.env.URL}` : 'http://localhost:3000',
-    URL: process.env.URL
+    BASE_URL: (process.env.VERCEL_URL) ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
+    VERCEL_URL: process.env.VERCEL_URL
   },
 
   loading: { color: '#fff' },
@@ -156,7 +156,7 @@ export default {
     }],
 
     ['@nuxtjs/sitemap', {
-      hostname: (process.env.BASE_URL) ? `https://${process.env.BASE_URL}` : 'http://localhost:3000',
+      hostname: (process.env.VERCEL_URL) ? process.env.BASE_URL : 'http://localhost:3000',
       defaults: {
         changefreq: 'daily',
         priority: 1,
