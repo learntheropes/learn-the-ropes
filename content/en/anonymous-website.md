@@ -8,11 +8,12 @@ tags:
   - njalla
   - bitcoin
 ---
-If you want to publish sensitive content on a website and you want to remain anonymous, you can choose a [tor onion service](https://en.wikipedia.org/wiki/Tor_(network)#Onion_services) or the [clearnet](https://en.wikipedia.org/wiki/Clearnet_(networking)).
+## Tor and clearnet
+To maintain your anonymity while publishing sensitive content on a website, you can opt for either a [tor onion service](https://en.wikipedia.org/wiki/Tor_(network)#Onion_services) or the [clearnet](https://en.wikipedia.org/wiki/Clearnet_(networking)).
 
-While there is no doubt that you can keep your identity more private by publishing on tor, you have also to consider that you will likely reach a smaller audience that you can reach with a website publshed on the clearnet.
+It's true that using tor can enhance your privacy, but it's important to note that you may have a smaller audience compared to publishing on the clearnet.
 
-In this article, we are going to investigate the process I found more efficent to protect your anonymity by publishing a traditional website on the clearnet.
+The focus of this article is to explore a more efficient approach for preserving your anonymity by creating a conventional website on the clearnet.
 
 ## Use the Tor Browser
 *The Tor Browser is a web browser that allows users to browse the internet anonymously by routing their traffic through a series of servers to hide their IP address and encrypt their internet activity. It is designed to protect users' privacy and security by preventing websites from tracking their online behavior and location. The browser is based on the open-source Firefox browser and can be downloaded for free on Windows, Mac, and Linux operating systems.*
