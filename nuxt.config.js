@@ -116,7 +116,8 @@ export default {
 
   css: [
     '~/assets/scss/main.scss',
-    '@mdi/font/css/materialdesignicons.css'
+    '~/assets/css/mdi.css',
+    // '@mdi/font/css/materialdesignicons.css'
   ],
 
   modules: [

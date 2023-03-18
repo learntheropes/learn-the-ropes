@@ -3,6 +3,8 @@ export default {
   toc: 'Sommario',
   published: 'Pubblicato',
   updated: 'Aggiornato',
+  // layout/default
+  scrollToTop: 'Scorrere verso l\'alto',
   // layouts/error
   pageNotFound: 'Pagina non trovata',
   unauthorized: 'Non autorizzato',

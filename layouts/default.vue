@@ -21,6 +21,14 @@ export default {
   data: () => ({
     showChevron: false
   }),
+  methods: {
+    scrollToTop () {
+      if (process.client) window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  },
   mounted() {
     setInterval(() => {
       this.showChevron = (window.pageYOffset > 0) ? true : false
@@ -37,5 +45,11 @@ export default {
 }
 .is-tall-container {
   flex: 1;
+}
+.is-bottom-right {
+  background: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 </style>
