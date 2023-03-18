@@ -79,13 +79,13 @@ At this point, you are ready to deploy your website.
 
 [^ln]: LN Here's one with multiple paragraphs and code.
 
-  Indent paragraphs to include them in the footnote.
+    Indent paragraphs to include them in the footnote.
 
-  Add as many paragraphs as you like.
+    Add as many paragraphs as you like.
 
 [^monero]: Monero Here's one with multiple paragraphs and code.
 
-  Indent paragraphs to include them in the footnote.
+    Indent paragraphs to include them in the footnote.
 
-  Add as many paragraphs as you like.
+    Add as many paragraphs as you like.
 
