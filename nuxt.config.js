@@ -32,7 +32,7 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           itemprop: 'og:url',
-          content: `${process.env.BASE_URL}`
+          content: `https://${process.env.VERCEL_URL}`
         },
         {
           hid: 'og:site_name',
@@ -44,7 +44,7 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           itemprop: 'og:image',
-          content: `${process.env.BASE_URL}/logo.webp`
+          content: `https://${process.env.VERCEL_URL}/logo.webp`
         },
         {
           hid: 'og:image:width',
@@ -74,7 +74,7 @@ export default {
           hid: 'twitter:image:src',
           property: 'twitter:image:src',
           itemprop: 'twitter:image:src',
-          content: `${process.env.BASE_URL}/logo.webp`
+          content: `https://${process.env.VERCEL_URL}/logo.webp`
         },
         {
           hid: 'geo.region',
@@ -108,7 +108,6 @@ export default {
   },
 
   env: {
-    BASE_URL: (process.env.VERCEL_URL) ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
     VERCEL_URL: process.env.VERCEL_URL
   },
 
@@ -136,7 +135,7 @@ export default {
     }],
 
     ['@nuxtjs/i18n', {
-      baseUrl: process.env.BASE_URL,
+      baseUrl: `https://${process.env.VERCEL_URL}`,
       locales: locales,
       detectBrowserLanguage: {
         useCookie: true,
@@ -156,7 +155,7 @@ export default {
     }],
 
     ['@nuxtjs/sitemap', {
-      hostname: (process.env.VERCEL_URL) ? process.env.BASE_URL : 'http://localhost:3000',
+      hostname: (process.env.VERCEL_URL) ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000',
       defaults: {
         changefreq: 'daily',
         priority: 1,
