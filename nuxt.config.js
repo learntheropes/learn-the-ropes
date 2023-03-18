@@ -9,6 +9,7 @@ export default {
 
   head() {
     const i18nHead = this.$nuxtI18nHead ? this.$nuxtI18nHead({ addSeoAttributes: true }) : {}
+    console.log('i18nHead.meta', i18nHead.meta)
     return {
       htmlAttrs: {
         ...i18nHead.htmlAttrs
@@ -52,7 +53,7 @@ export default {
           itemprop: 'googlebot',
           content: 'notranslate'
         },
-        ...i18nHead.meta
+        ...(i18nHead.meta || [])
       ]
     }
   },
@@ -98,7 +99,7 @@ export default {
       lazy: true,
       langDir: 'lang/',
     }],
-
+    
     ['@nuxtjs/moment', {
       timezone: true,
       locales: moment
@@ -119,10 +120,7 @@ export default {
       routes() {
         const { $content } = require('@nuxt/content')
         return getSitemap($content)
-      },
-      exclude: [
-        '**'
-      ],        
+      }       
     }],
   ],
 
