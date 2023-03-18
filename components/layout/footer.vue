@@ -7,14 +7,15 @@
         <div class="level-item">
           <div class="content">
             <div class="buttons">
-              <nuxt-link
+              <b-button
                 v-for="locale in availableLocales"
                 :key="locale.code"
+                tag="nuxt-link"
                 :to="switchLocalePath(locale.code)"
-                class="button is-text"
+                class="is-text no-decoration"
               >
               {{ locale.flag }} {{ locale.name }}
-              </nuxt-link>
+            </b-button>
             </div>
           </div>
         </div>
@@ -34,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-.is-text {
+.no-decoration {
   text-decoration: none;
 }
 </style>
