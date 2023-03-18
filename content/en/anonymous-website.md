@@ -18,7 +18,7 @@ The focus of this article is to explore a more efficient approach for preserving
 ## Use the Tor Browser
 *The Tor Browser is a web browser that allows users to browse the internet anonymously by routing their traffic through a series of servers to hide their IP address and encrypt their internet activity. It is designed to protect users' privacy and security by preventing websites from tracking their online behavior and location. The browser is based on the open-source Firefox browser and can be downloaded for free on Windows, Mac, and Linux operating systems.*
 
-If you have an Ubuntu or Debian machine, the recommended method to install it is using Flatpak.
+If you have an Ubuntu or Debian machine, the recommended method to install it is using [Flatpak](https://flatpak.org/setup/Ubuntu).
 
 In your terminal run the following commands to install and lunch it.
 
@@ -62,7 +62,7 @@ Register an account and login using the Proton email registered before and add a
 Under the `Account` > `Settings` page, enable the two factor authentication and past the PGP public key that you saved before on Poton, this way all the comunication with Njalla will be encrypted.
 
 ## Anonymous payment with Fixed Float
-For the payment of his services, Njalla accepts bitcoin buth does not support Lightning Network[^ln] payments that are more private then on-chain transactions. However, it also supports some altcoins including Monero[^monero].
+For the payment of his services, Njalla accepts bitcoin buth does not support Lightning Network[^1] payments that are more private then on-chain transactions. However, it also supports some altcoins including Monero[^2].
 
 To make a untraceable payment to Njalla, we will use [Fixed Float](https://fixedfloat.com) service, to cut the payment connection analysis.
 
@@ -78,13 +78,13 @@ The amount to be paid to Njalla willchange every couple of minutes, due to the v
 ## Deploy the content
 At this point, you are ready to deploy your website.
 
-[^ln]: LN Here's one with multiple paragraphs and code.
+[^1]: LN Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
 
     Add as many paragraphs as you like.
 
-[^monero]: Monero Here's one with multiple paragraphs and code.
+[^2]: Monero Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
 
