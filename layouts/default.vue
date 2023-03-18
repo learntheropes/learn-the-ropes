@@ -5,7 +5,7 @@
     </main>
     <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
       <b-tooltip :label="$t('scrollToTop')" position="is-left">
-        <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop"></b-icon>
+        <b-icon icon="chevron-up" type="is-black" size="is-medium" @click.native="scrollToTop" />
       </b-tooltip>
     </div>
     <layout-footer />
