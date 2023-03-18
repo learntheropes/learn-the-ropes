@@ -2,7 +2,11 @@
   <div v-if="posts.length" class="section">
     <h2 class="title is-1">{{ $t('articles') }}</h2>
     <div v-for="post of posts" :key="post.path" class="block">
-        <div class="title"><nuxt-link :to="localePath({ path: post.path })">{{ post.title }}</nuxt-link></div>
+        <div class="title">
+          <nuxt-link :to="localePath({ path: post.path })">
+            {{ post.title }}
+          </nuxt-link>
+        </div>
         <div class="subtitle">
           {{ post.description }}
           <b-tag v-for="tag of post.tags" :key="tag" @click="filterPostsByTeg(tag)" class="is-italic is-white">

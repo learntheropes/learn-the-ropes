@@ -2,8 +2,12 @@
   <div>
     <div class="container">
       <section class="section">
-        <h1 class="title is-1">{{ post.title }}</h1>
-        <div class="subtitle is-5">{{ post.description }}</div>
+        <h1 class="title is-1">
+          {{ post.title }}
+        </h1>
+        <div class="subtitle is-5">
+          {{ post.description }}
+        </div>
         <div class="block is-italic">
           {{$t('published')}} {{ $moment(post.createdAt).fromNow() }} 
           <br class="is-hidden-tablet">

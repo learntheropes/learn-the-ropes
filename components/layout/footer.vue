@@ -7,13 +7,7 @@
         <div class="level-item">
           <div class="content">
             <div class="buttons">
-              <b-button
-                v-for="locale in availableLocales"
-                :key="locale.code"
-                tag="nuxt-link"
-                :to="switchLocalePath(locale.code)"
-                class="is-text no-decoration"
-              >
+              <b-button v-for="locale in availableLocales" :key="locale.code" tag="nuxt-link" :to="switchLocalePath(locale.code)" class="is-text no-decoration">
               {{ locale.flag }} {{ locale.name }}
             </b-button>
             </div>
