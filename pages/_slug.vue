@@ -46,6 +46,13 @@ export default {
 }
 </script>
 
+<style>
+a {
+  font-weight: bold;
+  text-decoration: underline dotted;
+}
+</style>
+
 <style lang="scss">
 .nuxt-content {
   h2 {
