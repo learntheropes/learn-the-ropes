@@ -10,9 +10,11 @@
         </div>
         <div class="block is-italic">
           {{$t('published')}} {{ $moment(post.createdAt).fromNow() }} 
-          <br class="is-hidden-tablet">
-          <span class="is-hidden-mobile"> | </span>
-          {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
+          <span v-if="isUpdated">
+            <br class="is-hidden-tablet">
+            <span class="is-hidden-mobile"> | </span>
+            {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
+        </span>
         </div>
       </section>
       <blog-toc :toc="post.toc" />
@@ -40,6 +42,11 @@ export default {
       })
 
     return { post }
+  },
+  computed: {
+    isUpdated() {
+      return this.post.createdAt !== this.post.updatedAt
+    }
   }
 }
 </script>
