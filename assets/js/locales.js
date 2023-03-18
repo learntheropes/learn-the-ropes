@@ -19,7 +19,7 @@ export const locales = [
     iso: 'es-PY',
     file: 'es.js',
     name: 'Español',
-    flag: '🇵🇾',
+    flag: '🇪🇸',
   }, 
 ]
 
