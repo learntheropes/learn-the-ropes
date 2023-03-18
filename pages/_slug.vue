@@ -34,13 +34,11 @@ export default {
     BlogToc
   },
   async asyncData({ $content, params: { slug }, app, error }) {
-
     const post = await $content(app.i18n.locale, slug, { text: true })
       .fetch()
       .catch(() => {
         error({ statusCode: 404 })
       })
-
     return { post }
   },
   computed: {

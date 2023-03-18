@@ -8,11 +8,11 @@ export default {
   ssr: "true",
 
   head() {
-    // const i18nHead = this.$nuxtI18nHead ? this.$nuxtI18nHead({ addSeoAttributes: true }) : {}
+    const i18nHead = this.$nuxtI18nHead ? this.$nuxtI18nHead({ addSeoAttributes: true }) : {}
     return {
-      // htmlAttrs: {
-      //   ...i18nHead.htmlAttrs
-      // },
+      htmlAttrs: {
+        ...i18nHead.htmlAttrs
+      },
       meta: [
         {
           charset: 'utf-8'
@@ -41,52 +41,10 @@ export default {
           content: 'Paraguay XP'
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          itemprop: 'og:image',
-          content: `https://${process.env.URL}/logo.webp`
-        },
-        {
-          hid: 'og:image:width',
-          property: 'og:image:width',
-          itemprop: 'og:image:width',
-          content: '225'
-        },
-        {
-          hid: 'og:image:height',
-          property: 'og:image:height',
-          itemprop: 'og:image:height',
-          content: '225'
-        },
-        {
-          hid: 'og:image:type',
-          property: 'og:image:type',
-          itemprop: 'og:image:type',
-          content: 'image/webp'
-        },
-        {
           hid: 'twitter:card',
           property: 'twitter:card',
           itemprop: 'twitter:card',
           content: 'summary'
-        },
-        {
-          hid: 'twitter:image:src',
-          property: 'twitter:image:src',
-          itemprop: 'twitter:image:src',
-          content: `https://${process.env.URL}/logo.webp`
-        },
-        {
-          hid: 'geo.region',
-          name: 'geo.region',
-          itemprop: 'geo.region',
-          content: 'Paraguay'
-        },
-        {
-          hid: 'geo.placename',
-          name: 'geo.placename',
-          itemprop: 'geo.placename',
-          content: 'Asunción'
         },
         {
           hid: 'googlebot',
@@ -94,15 +52,7 @@ export default {
           itemprop: 'googlebot',
           content: 'notranslate'
         },
-        // ...i18nHead.meta
-      ],
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/favicon.ico'
-        },
-        // ...i18nHead.link
+        ...i18nHead.meta
       ]
     }
   },
