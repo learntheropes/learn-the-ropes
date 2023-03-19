@@ -4,7 +4,6 @@ export const locales = [
     iso: 'en-US',
     file: 'en.js',
     name: 'English',
-    flag: '🇺🇸',
     isCatchallLocale: true
   }, 
   {
@@ -12,14 +11,12 @@ export const locales = [
     iso: 'it-IT',
     file: 'it.js',
     name: 'Italiano',
-    flag: '🇮🇹'
   }, 
   {
     code: 'es',
     iso: 'es-PY',
     file: 'es.js',
     name: 'Español',
-    flag: '🇪🇸',
   }, 
 ]
 

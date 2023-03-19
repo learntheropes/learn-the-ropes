@@ -8,7 +8,7 @@
           <div class="content">
             <div class="buttons">
               <b-button v-for="locale in availableLocales" :key="locale.code" tag="nuxt-link" :to="switchLocalePath(locale.code)" class="is-text has-text-primary no-decoration">
-              {{ locale.flag }} {{ locale.name }}
+              {{ locale.name }}
             </b-button>
             </div>
           </div>
