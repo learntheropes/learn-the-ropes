@@ -15,14 +15,13 @@ export default {
     BlogAlternatives
   },
   async asyncData({ $content, params: { slug }, app, error }) {
-    const post = await $content(app.i18n.locale, slug, { text: true }).fetch().catch(err => null)
+    const post = await $content(app.i18n.locale, slug, { text: true }).fetch().catch(e => null)
     let alternatives
     if (!post) {
       const getPromise = (code) => {
         return $content(code, slug)
-        .only(['path'])
         .fetch()
-        .catch(err => ({
+        .catch(e => ({
           path: `${code}/${slug}`,
           extension: false
         }))
