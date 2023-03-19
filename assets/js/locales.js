@@ -1,5 +1,5 @@
 import find from 'lodash.find'
-
+import uniq from 'lodash.uniq'
 export const locales = [
   {
     code: 'en',
@@ -76,7 +76,7 @@ const getPosts = ($content) => {
               return exists         
             })
             Promise.all(promises).then((translationsExists) => {
-              translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale, index) => {
+              translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale) => {
                 const code = translationLocale.path.split('/')[1]
                 obj.links.push({
                   lang: find(hreflangs, { code: `/${code}` }).iso,
@@ -88,6 +88,7 @@ const getPosts = ($content) => {
           })
       })
   })
+  console.log('posts', posts)
   return posts
 }
 
@@ -104,16 +105,20 @@ export const getSitemap = ($content) => {
 
 export const getRoutes = ($content) => {
   const routes = []
-  locales.forEach(locale => {
+  const getExistingPostsSlug = ($content, locale) => {
     $content(locale.code)
-    .only(['path'])
+    .only(['slug'])
     .fetch()
-    .then(postPaths => {
-      postPaths.forEach(post => {
-        const slug = post.path.split('/')[2]
-        routes.push(`/${locale.code}/${slug}/`)
+    .then(postsSlug => {
+      postsSlug.forEach(post => {
+        locales.forEach(newLocale => {
+          routes.push(`/${newLocale.code}/${post.slug}/`)
+        })
       })
     })
-  })
-  return routes
+  }
+  const promises = locales.map(locale => getExistingPostsSlug($content, locale))
+  return Promise.all(promises).then(() => uniq(routes))
 }
+
+
