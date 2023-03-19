@@ -21,6 +21,12 @@
   right: 20px;
 }
 
+.is-tall {
+  .is-underline-dotted {
+    text-decoration: underline dotted;
+  }
+}
+
 .nuxt-content {
   a {
     text-decoration: underline dotted;
