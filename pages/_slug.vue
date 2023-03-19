@@ -1,48 +1,38 @@
 <template>
   <div class="container">
-    <section class="section">
-      <h1 class="title is-1 has-text-primary">
-        {{ post.title }}
-      </h1>
-      <div class="subtitle is-5">
-        {{ post.description }}
-      </div>
-      <div class="block is-italic">
-        {{$t('published')}} {{ $moment(post.createdAt).fromNow() }} 
-        <span v-if="isUpdated">
-          <br class="is-hidden-tablet">
-          <span class="is-hidden-mobile"> | </span>
-          {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
-      </span>
-      </div>
-    </section>
-    <blog-toc :toc="post.toc" />
-    <section class="section">
-      <div class="content">
-        <nuxt-content :document="post" />
-      </div>
-    </section>
+    <blog-post v-if="post" :post="post" />
+    <blog-alternatives v-else :alternatives="alternatives" />
   </div>
 </template>
 
 <script>
-import BlogToc from '~/components/blog/toc.vue'
+import { locales } from '~/assets/js/locales'
+import BlogPost from '~/components/blog/post'
+import BlogAlternatives from '~/components/blog/alternatives'
 export default {
   components: {
-    BlogToc
+    BlogPost,
+    BlogAlternatives
   },
   async asyncData({ $content, params: { slug }, app, error }) {
-    const post = await $content(app.i18n.locale, slug, { text: true })
-      .fetch()
-      .catch(() => {
-        error({ statusCode: 404 })
-      })
-    return { post }
-  },
-  computed: {
-    isUpdated() {
-      return this.post.createdAt !== this.post.updatedAt
+    const post = await $content(app.i18n.locale, slug, { text: true }).fetch().catch(err => null)
+    let alternatives
+    if (!post) {
+      const getPromise = (code) => {
+        return $content(code, slug)
+        .only(['path'])
+        .fetch()
+        .catch(err => ({
+          path: `${code}/${slug}`,
+          extension: false
+        }))
+      }
+      const promises = locales.filter(locale => locale !== app.i18n.locale).map(locale => getPromise(locale.code))
+      const responses = await Promise.all(promises)
+      alternatives = responses.filter(response => response.extension)
     }
+    if (!post && !alternatives.length) error({ statusCode: 404 })
+    return { slug, post, alternatives }
   }
 }
 </script>

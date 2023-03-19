@@ -14,4 +14,6 @@ export default {
   articles: 'Articles',
   // components/tags-list
   tags: 'Hashtags',
+  // components/blog/alternatives
+  alt: 'This content is not available in your language. But you can read it in: {lang} '
 }
