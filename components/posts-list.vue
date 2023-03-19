@@ -9,7 +9,7 @@
         </div>
         <div class="subtitle">
           {{ post.description }}
-          <b-tag v-for="tag of post.tags" :key="tag" @click="filterPostsByTeg(tag)" class="is-italic is-white">
+          <b-tag v-for="tag of post.tags" :key="tag" @click="filterPostsByTeg(tag)" class="is-italic is-white has-text-primary is-medium">
             #{{ tag }}
           </b-tag>
         </div>

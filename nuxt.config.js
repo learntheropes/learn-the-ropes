@@ -9,7 +9,6 @@ export default {
 
   head() {
     const i18nHead = this.$nuxtI18nHead ? this.$nuxtI18nHead({ addSeoAttributes: true }) : {}
-    console.log('i18nHead.meta', i18nHead.meta)
     return {
       htmlAttrs: {
         ...i18nHead.htmlAttrs

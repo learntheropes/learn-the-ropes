@@ -3,7 +3,7 @@
     <h2 class="title is-1">{{ $t('tags') }}</h2>
     <ul class="columns is-multiline is-mobile">
       <li v-for="tag in tags" :key="tag" class="column is-narrow">
-        <b-button @click="emitFilteredPostsByTag(tag)" class="is-italic">#{{ tag }}</b-button>
+        <b-button @click="emitFilteredPostsByTag(tag)" class="is-primary is-outlined is-italic">#{{ tag }}</b-button>
       </li>
     </ul>
   </div>
