@@ -16,7 +16,7 @@ export const locales = [
   }, 
   {
     code: 'es',
-    iso: 'es-PY',
+    iso: 'es-ES',
     file: 'es.js',
     name: 'Español',
   }, 
@@ -77,9 +77,9 @@ const getPosts = ($content) => {
             })
             Promise.all(promises).then((translationsExists) => {
               translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale, index) => {
-                const code = translationLocale.split('/')[0]
+                const code = translationLocale.path.split('/')[1]
                 obj.links.push({
-                  lang: find(locales, { code }).iso,
+                  lang: find(hreflangs, { code: `/${code}` }).iso,
                   url: `${code}/${slug}/`
                 })
               })
