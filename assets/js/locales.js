@@ -1,3 +1,5 @@
+import find from 'lodash.find'
+
 export const locales = [
   {
     code: 'en',
@@ -50,20 +52,41 @@ const getPosts = ($content) => {
   const posts = []
   hreflangs.forEach(locale => {
     $content(locale.code)
-    .only(['path'])
-    .fetch()
-    .then(postPaths => {
-      postPaths.forEach(post => {
-        const slug = post.path.split('/')[2]
-        posts.push({
-          url: `${locale.code}/${slug}/`,
-          links: hreflangs.map((translationLocale) => ({
-            lang: translationLocale.iso,
-            url: (translationLocale.iso !== 'x-default') ? `${translationLocale.code}/${slug}/` : `/${slug}/`
-          }))
-        })
+      .only(['path'])
+      .fetch()
+      .then(postPaths => {
+        postPaths
+          .forEach(post => {
+            const slug = post.path.split('/')[2]
+            const obj = {
+              url: `${locale.code}/${slug}/`,
+              links: [{
+                lang: 'x-default',
+                url: `/${slug}/`
+              }]
+            }
+            const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
+              const exists = $content(newLocale.code, slug)
+              .only(['path'])
+              .fetch()
+              .catch(err => ({
+                path: `${newLocale.code}/${slug}`,
+                extension: false
+              }))
+              return exists         
+            })
+            Promise.all(promises).then((translationsExists) => {
+              translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale, index) => {
+                const code = translationLocale.split('/')[0]
+                obj.links.push({
+                  lang: find(locales, { code }).iso,
+                  url: `${code}/${slug}/`
+                })
+              })
+            })
+            posts.push(obj)
+          })
       })
-    })
   })
   return posts
 }

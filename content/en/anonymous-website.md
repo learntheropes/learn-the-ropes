@@ -62,7 +62,7 @@ Register an account and login using the Proton email registered before and add a
 Under the `Account` > `Settings` page, enable the two factor authentication and past the PGP public key that you saved before on Poton, this way all the comunication with Njalla will be encrypted.
 
 ## Anonymous payment with Fixed Float
-For the payment of his services, Njalla accepts bitcoin buth does not support Lightning Network[^1] payments that are more private then on-chain transactions. However, it also supports some altcoins including Monero[^2].
+For the payment of his services, Njalla accepts bitcoin buth does not support Lightning Network[^LightningNetwork] payments that are more private then on-chain transactions. However, it also supports some altcoins including Monero[^Monero].
 
 To make a untraceable payment to Njalla, we will use [Fixed Float](https://fixedfloat.com) service, to cut the payment connection analysis.
 
@@ -78,7 +78,7 @@ The amount to be paid to Njalla willchange every couple of minutes, due to the v
 ## Deploy the content
 At this point, you are ready to deploy your website.
 
-[^1]: The Bitcoin Lightning Network is a layer-two solution built on top of the Bitcoin blockchain that aims to solve some of the scalability and privacy issues of on-chain Bitcoin transactions.
+[^LightningNetwork]: The Bitcoin Lightning Network is a layer-two solution built on top of the Bitcoin blockchain that aims to solve some of the scalability and privacy issues of on-chain Bitcoin transactions.
 
     One of the key privacy features of the Lightning Network is that transactions are not broadcasted to the entire Bitcoin network. Instead, they are only visible to the two parties involved in the transaction, providing a higher level of privacy and anonymity.
 
@@ -86,7 +86,7 @@ At this point, you are ready to deploy your website.
 
     Overall, the Lightning Network offers a higher level of privacy and scalability compared to on-chain Bitcoin transactions, making it a popular choice for those who want to make fast and private Bitcoin transactions without incurring high fees or long processing times.
 
-[^2]: Monero is a cryptocurrency that places a strong emphasis on privacy and anonymity. It was created in 2014 with the goal of providing a decentralized and private alternative to Bitcoin.
+[^Monero]: Monero is a cryptocurrency that places a strong emphasis on privacy and anonymity. It was created in 2014 with the goal of providing a decentralized and private alternative to Bitcoin.
 
     One of Monero's key features is its use of ring signatures and stealth addresses to obscure the identities of senders and recipients in transactions. This means that it's much harder to trace transactions and link them to specific individuals or addresses.
 
