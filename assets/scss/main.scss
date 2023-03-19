@@ -28,11 +28,22 @@
 }
 
 .nuxt-content {
+  .language-text {
+    code {
+      font-family: monospace;
+      color: $primary;
+    }
+  }
+  p {
+    code {
+      color: $primary;
+    }
+  }
   a {
     text-decoration: underline dotted;
   }
   h2 {
-    color: $purple;
+    color: $primary;
     a { 
       span {
         display: none;
@@ -40,7 +51,7 @@
     }
   }
   h3 {
-    color: $purple;
+    color: $primary;
     a { 
       span {
         display: none;
