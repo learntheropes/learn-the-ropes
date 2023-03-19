@@ -36,20 +36,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.is-tall {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.is-tall-container {
-  flex: 1;
-}
-.is-bottom-right {
-  background: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-</style>

@@ -1,8 +1,44 @@
 
 @import "~assets/scss/style.scss";
-// $purple: hsl(271, 100%, 71%) !default;
-// $primary: $purple;
-// $link: $purple;
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+.is-tall {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.is-tall-container {
+  flex: 1;
+}
+
+.is-bottom-right {
+  background: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.nuxt-content {
+  a {
+    text-decoration: underline dotted;
+  }
+  h2 {
+    color: $purple;
+    a { 
+      span {
+        display: none;
+      }
+    }
+  }
+  h3 {
+    color: $purple;
+    a { 
+      span {
+        display: none;
+      }
+    }
+  }
+}

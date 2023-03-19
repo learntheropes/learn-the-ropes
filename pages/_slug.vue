@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <section class="section">
-        <h1 class="title is-1">
+        <h1 class="title is-1 has-text-primary">
           {{ post.title }}
         </h1>
         <div class="subtitle is-5">
@@ -48,29 +48,3 @@ export default {
   }
 }
 </script>
-
-<style>
-a {
-  font-weight: bold;
-  text-decoration: underline dotted;
-}
-</style>
-
-<style lang="scss">
-.nuxt-content {
-  h2 {
-    a{ 
-      span {
-        display: none;
-      }
-    }
-  }
-  h3 {
-    a{ 
-      span {
-        display: none;
-      }
-    }
-  }
-}
-</style>
