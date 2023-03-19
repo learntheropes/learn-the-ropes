@@ -78,15 +78,19 @@ The amount to be paid to Njalla willchange every couple of minutes, due to the v
 ## Deploy the content
 At this point, you are ready to deploy your website.
 
-[^1]: LN Here's one with multiple paragraphs and code.
+[^1]: The Bitcoin Lightning Network is a layer-two solution built on top of the Bitcoin blockchain that aims to solve some of the scalability and privacy issues of on-chain Bitcoin transactions.
 
-    Indent paragraphs to include them in the footnote.
+    One of the key privacy features of the Lightning Network is that transactions are not broadcasted to the entire Bitcoin network. Instead, they are only visible to the two parties involved in the transaction, providing a higher level of privacy and anonymity.
 
-    Add as many paragraphs as you like.
+    In addition, Lightning Network transactions are much faster and cheaper than on-chain Bitcoin transactions. This is because Lightning Network transactions are conducted off-chain, which means that they don't have to be verified by every node in the Bitcoin network. As a result, they can be processed almost instantly and at a fraction of the cost of on-chain transactions.
 
-[^2]: Monero Here's one with multiple paragraphs and code.
+    Overall, the Lightning Network offers a higher level of privacy and scalability compared to on-chain Bitcoin transactions, making it a popular choice for those who want to make fast and private Bitcoin transactions without incurring high fees or long processing times.
 
-    Indent paragraphs to include them in the footnote.
+[^2]: Monero is a cryptocurrency that places a strong emphasis on privacy and anonymity. It was created in 2014 with the goal of providing a decentralized and private alternative to Bitcoin.
 
-    Add as many paragraphs as you like.
+    One of Monero's key features is its use of ring signatures and stealth addresses to obscure the identities of senders and recipients in transactions. This means that it's much harder to trace transactions and link them to specific individuals or addresses.
+
+    Additionally, Monero uses a unique obfuscation technique called "ring confidential transactions" (RingCT) to hide the amounts being sent in transactions. This prevents the amounts from being visible on the public ledger, adding another layer of privacy.
+
+    Overall, Monero's focus on privacy has made it a popular choice for those who value their financial privacy and want to keep their transactions confidential.
 
