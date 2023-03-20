@@ -3,6 +3,8 @@ export default {
   toc: 'Sommario',
   published: 'Pubblicato',
   updated: 'Aggiornato',
+  // layoud/editor
+  edit: 'Modifica',
   // layout/default
   scrollToTop: 'Scorrere verso l\'alto',
   // layouts/error

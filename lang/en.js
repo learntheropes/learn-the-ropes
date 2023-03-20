@@ -3,6 +3,8 @@ export default {
   toc: 'Table of Contents',
   published: 'Published',
   updated: 'Updated',
+  // layoud/editor
+  edit: 'Edit',
   // layout/default
   scrollToTop: 'Scroll to the top',
   // layouts/error

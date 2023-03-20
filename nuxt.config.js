@@ -81,7 +81,8 @@ export default {
     ['nuxt-content-git'],
 
     ['@nuxt/content', {
-      liveEdit: false,
+      liveEdit: true,
+      editor: '~/layouts/editor',
       markdown: {
         prism: {
           theme: false

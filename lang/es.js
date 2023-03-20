@@ -3,6 +3,8 @@ export default {
   toc: 'Tabla de contenidos',
   published: 'Publicado',
   updated: 'Actualizado',
+  // layoud/editor
+  edit: 'Editar',
   // layout/default
   scrollToTop: 'Desplácese hasta la parte superior',
   // layouts/error
