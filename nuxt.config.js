@@ -130,7 +130,7 @@ export default {
   ],
 
   serverMiddleware: [
-    '~/serverMiddleware/redirects'
+    // '~/serverMiddleware/redirects'
   ],
 
   generate: {
