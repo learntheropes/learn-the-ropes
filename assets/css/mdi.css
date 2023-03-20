@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mdi-arrow-left-bottom::before {
+  content: "\F17A5";
+}
+
 .mdi-home-outline::before {
   content: "\F06A1";
 }

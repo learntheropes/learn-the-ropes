@@ -81,7 +81,12 @@ export default {
     ['nuxt-content-git'],
 
     ['@nuxt/content', {
-      liveEdit: false
+      liveEdit: false,
+      markdown: {
+        prism: {
+          theme: false
+        }
+      }
     }],
 
     ['@nuxtjs/i18n', {
@@ -124,12 +129,23 @@ export default {
   ],
 
   plugins: [
-    '~/plugins/moment'
+    '~/plugins/moment',
+    '~/plugins/markdown-code'
   ],
 
   serverMiddleware: [
     // '~/serverMiddleware/redirects'
   ],
+
+  // hooks: {
+  //   // 'content:file:beforeParse': (file) => {
+  //   //   file.data = file.data.replaceAll('↩', 'FOOBAR').replaceAll('U+21A9', 'FOOBAR')
+  //   // },
+  //   'content:options': (options) => {
+  //    // options.markdown.prism.theme = '/assests/scss/prism.scss'
+  //     console.log('Content options:', options)
+  //   }
+  // },
 
   generate: {
     routes: () => {

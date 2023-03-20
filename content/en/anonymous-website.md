@@ -22,7 +22,7 @@ If you have an Ubuntu or Debian machine, the recommended method to install it is
 
 In your terminal run the following commands to install and lunch it.
 
-```
+```bash
 sudo add-apt-repository ppa:flatpak/stable
 sudo apt update
 sudo apt install flatpak
