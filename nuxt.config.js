@@ -104,25 +104,23 @@ export default {
       locales: moment
     }],
 
-    // ['@nuxtjs/sitemap', {
-    //   hostname: (process.env.URL) ? `https://${process.env.URL}` : 'http://localhost:3000',
-    //   defaults: {
-    //     changefreq: 'daily',
-    //     priority: 1,
-    //     lastmod: new Date()
-    //   },
-    //   trailingSlash: true,
-    //   i18n: {
-    //     locales: hreflangs,
-    //     defaultLocale: 'en'
-    //   },
-    //   routes() {
-    //     const { $content } = require('@nuxt/content')
-    //     getSitemap($content).then(sitemap => {
-    //       return sitemap
-    //     })
-    //   }       
-    // }],
+    ['@nuxtjs/sitemap', {
+      hostname: (process.env.URL) ? `https://${process.env.URL}` : 'http://localhost:3000',
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
+      },
+      trailingSlash: true,
+      i18n: {
+        locales: hreflangs,
+        defaultLocale: 'en'
+      },
+      routes() {
+        const { $content } = require('@nuxt/content')
+        return getSitemap($content).then(sitemap => sitemap)
+      }       
+    }],
   ],
 
   plugins: [

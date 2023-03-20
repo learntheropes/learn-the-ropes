@@ -67,10 +67,9 @@ const getPosts = ($content) => {
             }
             const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
               const exists = $content(newLocale.code, slug)
-              .only(['path'])
               .fetch()
               .catch(err => ({
-                path: `${newLocale.code}/${slug}`,
+                path: `${newLocale.code}/${slug}/`,
                 extension: false
               }))
               return exists         
@@ -88,7 +87,6 @@ const getPosts = ($content) => {
           })
       })
   })
-  console.log('posts', posts)
   return posts
 }
 
