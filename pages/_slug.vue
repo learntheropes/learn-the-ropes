@@ -28,10 +28,6 @@ export default {
       }
       const promises = locales.filter(locale => locale !== app.i18n.locale).map(locale => getPromise(locale.code))
       const responses = await Promise.all(promises)
-      responses.map(response => {
-        response.path = `${response.path}/`
-        return response
-      })
       alternatives = responses.filter(response => response.extension)
     }
     if (!post && !alternatives.length) error({ statusCode: 404 })

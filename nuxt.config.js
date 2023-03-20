@@ -141,6 +141,9 @@ export default {
   },
 
   router: {
+    middleware: [
+      'redirects'
+    ],
     trailingSlash: true,
     options: {
       strict: true,
