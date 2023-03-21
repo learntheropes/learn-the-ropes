@@ -9,8 +9,7 @@ tags:
   - bitcoin
 ---
 ## Tor and clearnet
-To maintain your anonymity while publishing sensitive content on a website, you can opt for either a [tor onion service](https://en.wikipedia.org/wiki/Tor_(network)#Onion_services) or the [clearnet](https://en.wikipedia.org/wiki/Clearnet_(networking)).
-
+To maintain your anonymity while publishing sensitive content on a website, you can opt for either a [tor onion service](https://en.wikipedia.org/wiki/Tor_(network)#Onion_services) or the [clearnet](https://en.wikipedia.org/wiki/Clearnet_(networking)).  
 It's true that using tor can enhance your privacy, but it's important to note that you may have a smaller audience compared to publishing on the clearnet.  
 The focus of this article is to explore a more efficient approach for preserving your anonymity by creating a conventional website on the clearnet.  
 
