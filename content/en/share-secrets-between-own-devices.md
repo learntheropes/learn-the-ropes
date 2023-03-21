@@ -4,9 +4,10 @@ description: How to safely share private notes between own devices.
 tags:
   - privacy
   - keet
+  - p2p
   - signal
   - keybase
-  - PGP
+  - pgp
 ---
 ## The problem
 I often want to share private info between own devices and keep them saved.  
