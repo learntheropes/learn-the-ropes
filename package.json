@@ -1,5 +1,5 @@
 {
-  "name": "giovannilaperna-blog",
+  "name": "learn-the-ropes",
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
