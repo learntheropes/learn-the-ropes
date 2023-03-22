@@ -13,7 +13,7 @@
           <br class="is-hidden-tablet">
           <span class="is-hidden-mobile"> | </span>
           {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
-      </span>
+        </span>
       </div>
     </section>
     <blog-toc :toc="post.toc" />
