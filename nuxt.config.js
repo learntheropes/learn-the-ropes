@@ -135,7 +135,7 @@ export default {
       routes() {
         const { $content } = require('@nuxt/content')
         return getSitemap($content).then(sitemap => sitemap)
-      }       
+      } 
     }],
   ],
 

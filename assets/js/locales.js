@@ -50,7 +50,7 @@ const getStatics = () => {
 
 const getPosts = ($content) => {
   const posts = []
-  hreflangs.forEach(locale => {
+  const getPostsByLocale = ($content, locale) => {
     $content('posts', locale.code)
       .only(['path'])
       .fetch()
@@ -59,10 +59,10 @@ const getPosts = ($content) => {
           .forEach(post => {
             const slug = post.path.split('/')[3]
             const obj = {
-              url: `${locale.code}/${slug}/`,
+              url: `${locale.code}/posts/${slug}/`,
               links: [{
                 lang: 'x-default',
-                url: `/${slug}/`
+                url: `posts/${slug}/`
               }]
             }
             const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
@@ -79,15 +79,16 @@ const getPosts = ($content) => {
                 const code = translationLocale.path.split('/')[2]
                 obj.links.push({
                   lang: find(hreflangs, { code: `/${code}` }).iso,
-                  url: `post/${code}/${slug}/`
+                  url: `${code}/posts/${slug}/`
                 })
               })
             })
             posts.push(obj)
-          })
+          })      
       })
-  })
-  return posts
+    }
+  const promises = locales.map(locale => getPostsByLocale($content, locale))
+  return Promise.all(promises).then(() => posts)
 }
 
 export const getSitemap = ($content) => {
@@ -104,13 +105,13 @@ export const getSitemap = ($content) => {
 export const getRoutes = ($content) => {
   const routes = []
   const getExistingPostsSlug = ($content, locale) => {
-    $content(locale.code)
+    $content('posts', locale.code)
     .only(['slug'])
     .fetch()
     .then(postsSlug => {
       postsSlug.forEach(post => {
         locales.forEach(newLocale => {
-          routes.push(`/${newLocale.code}/${post.slug}/`)
+          routes.push(`/${newLocale.code}/posts/${post.slug}/`)
         })
       })
     })
