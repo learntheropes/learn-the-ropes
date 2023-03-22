@@ -3,15 +3,16 @@
     <div class="level container">
       <div class="level-left">
         <div class="content">
+          {{ pages }}
           <div class="buttons">
             <b-button
-              v-for="post in posts"
-              :key="post.path"
+              v-for="page in pages"
+              :key="page.path"
               tag="nuxt-link"
-              :to="localePath({ path: post.path })"
+              :to="localePath({ path: page.path })"
               class="is-text has-text-primary is-underline-dotted"
             >
-              {{ post.title }}
+              {{ page.title }}
             </b-button>
           </div>
         </div>
@@ -40,17 +41,16 @@
 <script>
 export default {
   data: () => ({
-    posts: []
+    pages: []
   }),
   async fetch() {
-    const posts = await this.$content( 'pages', this.$i18n.locale)
-      .only(['title', 'slug'])
-      .sortBy('createdAt', 'desc')
+    const pages = await this.$content( 'pages', this.$i18n.locale)
+      .only(['title', 'path'])
       .fetch()
 
-      this.posts = posts.map((post) => ({
-        ...post,
-        path: post.path.replace(`/${this.$i18n.locale}`, ''),
+      this.pages = pages.map((page) => ({
+        ...page,
+        path: page.path.replace(`/${this.$i18n.locale}`, ''),
       }))
   },
   computed: {
