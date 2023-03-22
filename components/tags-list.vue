@@ -18,7 +18,7 @@ export default {
   }),
   async fetch() {
 
-    const posts = await this.$content(this.$i18n.locale)
+    const posts = await this.$content( 'posts', this.$i18n.locale)
       .only(['tags'])
       .fetch()
 

@@ -9,7 +9,7 @@
         </div>
         <div class="subtitle">
           {{ post.description }}
-          <b-tag v-for="tag of post.tags" :key="tag" @click="filterPostsByTeg(tag)" class="is-italic is-white has-text-primary is-medium">
+          <b-tag v-for="tag of post.tags" :key="tag" @click="filterPostsByTag(tag)" class="is-italic is-white has-text-primary is-medium">
             #{{ tag }}
           </b-tag>
         </div>
@@ -23,7 +23,7 @@ export default {
     posts: []
   }),
   async fetch() {
-    const posts = await this.$content(this.$i18n.locale)
+    const posts = await this.$content( 'posts', this.$i18n.locale)
       .only(['title', 'description', 'tags', 'path'])
       .sortBy('createdAt', 'desc')
       .fetch()
@@ -34,9 +34,9 @@ export default {
       }))
   },
   methods: {
-    async filterPostsByTeg(tag) {
+    async filterPostsByTag(tag) {
 
-      const posts = await this.$content(this.$i18n.locale)
+      const posts = await this.$content( 'posts', this.$i18n.locale)
       .only(['title', 'description', 'tags', 'path'])
       .where({ tags: { $contains: tag }})
       .sortBy('createdAt', 'desc')
@@ -49,7 +49,7 @@ export default {
     }
   },
   created() {
-    this.$nuxt.$on('emitFilteredPostsByTag', async (tag) => await this.filterPostsByTeg(tag))
+    this.$nuxt.$on('emitFilteredPostsByTag', async (tag) => await this.filterPostsByTag(tag))
   }
 }
 </script>
