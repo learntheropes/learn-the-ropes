@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import BlogToc from '~/components/blog/toc'
+import BlogToc from '~/components/posts/toc'
 export default {
   components: {
     BlogToc

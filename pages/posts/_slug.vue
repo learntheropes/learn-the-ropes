@@ -7,8 +7,8 @@
 
 <script>
 import { locales } from '~/assets/js/locales'
-import BlogPost from '~/components/blog/post'
-import BlogAlternatives from '~/components/blog/alternatives'
+import BlogPost from '~/components/posts/post'
+import BlogAlternatives from '~/components/posts/alternatives'
 export default {
   components: {
     BlogPost,

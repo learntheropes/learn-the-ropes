@@ -16,6 +16,6 @@ export default {
   articles: 'Artículos',
   // components/tags-list
   tags: 'Etiquetas',
-  // components/blog/alternatives
+  // components/posts/alternatives
   alt: 'Este contenido no está disponible en tu idioma. Pero puedes lejerlo en: {lang} '
 }
