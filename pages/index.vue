@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-    <tags-list />
-    <posts-list />
+    <index-tags />
+    <index-posts />
   </div>
 </template>
 
 <script>
-import TagsList from '~/components/tags-list'
-import PostsList from '~/components/posts-list'
+import IndexTags from '~/components/index/tags'
+import IndexPosts from '~/components/index/posts'
 export default {
   components: {
-    TagsList,
-    PostsList
+    IndexTags,
+    IndexPosts
   }
 }
 </script>

@@ -12,9 +12,9 @@ export default {
   unauthorized: 'No autorizado',
   somethingWentWrong: 'Algo salió mal',
   backToTheHomePage: 'Volver a la página de inicio',
-  // components/posts-list
+  // components/index/posts
   articles: 'Artículos',
-  // components/tags-list
+  // components/index/tags
   tags: 'Etiquetas',
   // components/posts/alternatives
   alt: 'Este contenido no está disponible en tu idioma. Pero puedes lejerlo en: {lang} '

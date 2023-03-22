@@ -12,9 +12,9 @@ export default {
   unauthorized: 'Unauthorized',
   somethingWentWrong: 'Something went wrong',
   backToTheHomePage: 'Back to the home page',
-  // components/posts-list
+  // components/index/posts
   articles: 'Articles',
-  // components/tags-list
+  // components/index/tags
   tags: 'Hashtags',
   // components/posts/alternatives
   alt: 'This content is not available in your language. But you can read it in: {lang} '
