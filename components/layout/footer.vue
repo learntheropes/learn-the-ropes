@@ -3,7 +3,6 @@
     <div class="level container">
       <div class="level-left">
         <div class="content">
-          {{ pages }}
           <div class="buttons">
             <b-button
               v-for="page in pages"
