@@ -69,7 +69,6 @@ const getPosts = ($content) => {
               const exists = $content('posts', newLocale.code, slug)
               .fetch()
               .catch(err => ({
-                path: `posts/${newLocale.code}/${slug}/`,
                 extension: false
               }))
               return exists         
