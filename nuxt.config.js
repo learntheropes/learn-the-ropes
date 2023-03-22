@@ -1,4 +1,4 @@
-import { locales, moment, hreflangs, getSitemap, getRoutes } from './assets/js/locales'
+import { locales, moment, hreflangs, getSitemap, generateRoutes } from './assets/js/locales'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -148,20 +148,11 @@ export default {
     // '~/serverMiddleware/redirects'
   ],
 
-  // hooks: {
-  //   // 'content:file:beforeParse': (file) => {
-  //   //   file.data = file.data.replaceAll('↩', 'FOOBAR').replaceAll('U+21A9', 'FOOBAR')
-  //   // },
-  //   'content:options': (options) => {
-  //    // options.markdown.prism.theme = '/assests/scss/prism.scss'
-  //     console.log('Content options:', options)
-  //   }
-  // },
-
   generate: {
+    crawler: false,
     routes: () => {
       const { $content } = require('@nuxt/content')
-      return getRoutes($content).then(routes => routes)
+      return generateRoutes($content).then(routes => routes)
     }
   },
 

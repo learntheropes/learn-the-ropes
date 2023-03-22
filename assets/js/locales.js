@@ -50,7 +50,7 @@ const getStatics = () => {
 
 const getDinamicRoutes = ($content, folder) => {
   const routes = []
-  const getPostsByLocale = ($content, locale) => {
+  const getRoutesByLocale = ($content, locale) => {
     $content(folder, locale.code)
       .only(['path'])
       .fetch()
@@ -86,7 +86,7 @@ const getDinamicRoutes = ($content, folder) => {
           })      
       })
     }
-  const promises = locales.map(locale => getPostsByLocale($content, locale))
+  const promises = locales.map(locale => getRoutesByLocale($content, locale))
   return Promise.all(promises).then(() => routes)
 }
 
@@ -99,22 +99,28 @@ export const getSitemap = ($content) => {
   })
 }
 
-export const getRoutes = ($content) => {
+const generateRoutesByFolder = ($content, folder) => {
   const routes = []
-  const getExistingPostsSlug = ($content, locale) => {
-    $content('posts', locale.code)
+  const getSlugs = ($content, locale) => {
+    $content(folder, locale.code)
     .only(['slug'])
     .fetch()
-    .then(postsSlug => {
-      postsSlug.forEach(post => {
-        locales.forEach(newLocale => {
-          routes.push(`/${newLocale.code}/posts/${post.slug}/`)
-        })
+    .then(slugs => {
+      slugs.forEach(({slug}) => {
+        routes.push(`/${locale.code}/${folder}/${slug}/`)
       })
     })
   }
-  const promises = locales.map(locale => getExistingPostsSlug($content, locale))
+  const promises = locales.map(locale => getSlugs($content, locale))
   return Promise.all(promises).then(() => uniq(routes))
+}
+
+export const generateRoutes = ($content) => {
+  const posts = generateRoutesByFolder($content, 'posts')
+  const pages = generateRoutesByFolder($content, 'pages')
+  return Promise.all([posts, pages]).then(values => {
+    return [].concat.apply([], values)
+  })
 }
 
 
