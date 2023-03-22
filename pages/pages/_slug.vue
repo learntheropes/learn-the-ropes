@@ -15,6 +15,11 @@
 
 <script>
 export default {
+  head () {
+    const title = `${this.post.title}`
+    const description = (this.post.description)
+    return this.$seo.head(title, description)
+  },
   async asyncData({ $content, params: { slug }, app, error }) {
     const post = await $content( 'pages', app.i18n.locale, slug, { text: true })
       .fetch()

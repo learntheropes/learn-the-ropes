@@ -146,7 +146,8 @@ export default {
 
   plugins: [
     '~/plugins/moment',
-    '~/plugins/markdown-code'
+    '~/plugins/markdown-code',
+    '~/plugins/seo'
   ],
 
   serverMiddleware: [

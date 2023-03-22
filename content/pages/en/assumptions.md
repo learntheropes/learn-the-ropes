@@ -1,5 +1,6 @@
 ---
 title: Assumptions
+description: What I assume when I write articles and I expect you assume when you comment.
 ---
 The articles in this blog are written by a random pleb.  
 I don't consider myself an expert in any of the fields I'm covering.  
