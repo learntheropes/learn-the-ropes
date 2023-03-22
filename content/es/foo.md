@@ -6,3 +6,5 @@ tags:
   - bar
 ---
 Foo bar en español
+
+![](/img.png)

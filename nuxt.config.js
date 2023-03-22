@@ -81,9 +81,19 @@ export default {
     ['nuxt-content-git'],
 
     ['@nuxt/content', {
+      fullTextSearchFields: [
+        'title',
+        'description',
+        'text'
+      ],
       liveEdit: true,
       editor: '~/layouts/editor',
       markdown: {
+        rehypePlugins: [
+          ['rehype-img-size', {
+            dir: 'static'
+          }]
+        ],
         prism: {
           theme: false
         }
