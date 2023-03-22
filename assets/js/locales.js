@@ -51,13 +51,13 @@ const getStatics = () => {
 const getPosts = ($content) => {
   const posts = []
   hreflangs.forEach(locale => {
-    $content(locale.code)
+    $content('posts', locale.code)
       .only(['path'])
       .fetch()
       .then(postPaths => {
         postPaths
           .forEach(post => {
-            const slug = post.path.split('/')[2]
+            const slug = post.path.split('/')[3]
             const obj = {
               url: `${locale.code}/${slug}/`,
               links: [{
@@ -66,20 +66,20 @@ const getPosts = ($content) => {
               }]
             }
             const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
-              const exists = $content(newLocale.code, slug)
+              const exists = $content('posts', newLocale.code, slug)
               .fetch()
               .catch(err => ({
-                path: `${newLocale.code}/${slug}/`,
+                path: `posts/${newLocale.code}/${slug}/`,
                 extension: false
               }))
               return exists         
             })
             Promise.all(promises).then((translationsExists) => {
               translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale) => {
-                const code = translationLocale.path.split('/')[1]
+                const code = translationLocale.path.split('/')[2]
                 obj.links.push({
                   lang: find(hreflangs, { code: `/${code}` }).iso,
-                  url: `${code}/${slug}/`
+                  url: `post/${code}/${slug}/`
                 })
               })
             })
