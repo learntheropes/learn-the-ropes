@@ -4,8 +4,8 @@ dotenv.config()
 
 export default {
 
-  target: "static",
-  ssr: "true",
+  target: 'static',
+  ssr: 'true',
 
   head() {
     const i18nHead = this.$nuxtI18nHead ? this.$nuxtI18nHead({ addSeoAttributes: true }) : {}
@@ -14,6 +14,11 @@ export default {
         ...i18nHead.htmlAttrs
       },
       meta: [
+        {
+          hid: 'google-site-verification',
+          name: 'google-site-verification',
+          content: 'cr7ts7H-VXD2qwwo3a6LkqYh0iN3eg-t4P7T4tNA5qk'
+        },
         {
           charset: 'utf-8'
         },
