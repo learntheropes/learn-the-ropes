@@ -48,25 +48,25 @@ const getStatics = () => {
   return statics
 }
 
-const getPosts = ($content) => {
-  const posts = []
+const getDinamicRoutes = ($content, folder) => {
+  const routes = []
   const getPostsByLocale = ($content, locale) => {
-    $content('posts', locale.code)
+    $content(folder, locale.code)
       .only(['path'])
       .fetch()
-      .then(postPaths => {
-        postPaths
-          .forEach(post => {
-            const slug = post.path.split('/')[3]
+      .then(routesByLocale => {
+        routesByLocale
+          .forEach(route => {
+            const slug = route.path.split('/')[3]
             const obj = {
-              url: `${locale.code}/posts/${slug}/`,
+              url: `${locale.code}/${folder}/${slug}/`,
               links: [{
                 lang: 'x-default',
-                url: `posts/${slug}/`
+                url: `${folder}/${slug}/`
               }]
             }
             const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
-              const exists = $content('posts', newLocale.code, slug)
+              const exists = $content(folder, newLocale.code, slug)
               .fetch()
               .catch(err => ({
                 extension: false
@@ -78,25 +78,23 @@ const getPosts = ($content) => {
                 const code = translationLocale.path.split('/')[2]
                 obj.links.push({
                   lang: find(hreflangs, { code: `/${code}` }).iso,
-                  url: `${code}/posts/${slug}/`
+                  url: `${code}/${folder}/${slug}/`
                 })
               })
             })
-            posts.push(obj)
+            routes.push(obj)
           })      
       })
     }
   const promises = locales.map(locale => getPostsByLocale($content, locale))
-  return Promise.all(promises).then(() => posts)
+  return Promise.all(promises).then(() => routes)
 }
 
 export const getSitemap = ($content) => {
-
   const statics = getStatics()
-
-  const posts = getPosts($content)
-
-  return Promise.all([statics, posts]).then(values => {
+  const posts = getDinamicRoutes($content, 'posts')
+  const pages = getDinamicRoutes($content, 'pages')
+  return Promise.all([statics, posts, pages]).then(values => {
     return [].concat.apply([], values)
   })
 }
