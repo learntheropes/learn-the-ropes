@@ -22,7 +22,7 @@ I started today to use [Keet](https://keet.io/) for this scope.
 Keet is p2p chat software, developed on Holepunch that allows encrypted video and text without a server. The connection is peer-to-peer.  
 A Keet client for all the OS I'm using is already available, altrough in alpha stage.  
 To connect the devices to the same chat room, the user(s) need to share a room invite link, that is a long string of text starting with `punch://`.    
-While considering if was better to share the string using Signal or email to PGP, I realized that all my devices were physically in the same room, so I could just create the room on the Keet linux client and that share the invite link with a qrcode.
+While considering if was better to share the string using Signal or email with PGP, I realized that all my devices were physically in the same room, so I could just create the room on the Keet linux client and that share the invite link with a qrcode.
 ## Use qrencode to generate a qrcode
 qrencode is a software to generate qrcode from string on Debian based Linux distributions.  
 You can easlily install it from Ubuntu Software GUI or from terminal with:
