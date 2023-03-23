@@ -12,6 +12,9 @@ export default {
   unauthorized: 'No autorizado',
   somethingWentWrong: 'Algo salió mal',
   backToTheHomePage: 'Volver a la página de inicio',
+  // pages/index
+  title: 'Learn the ropes',
+  description: 'Privacidad y seguridad en línea para un bitcoiner nómada digital',
   // components/index/posts
   articles: 'Artículos',
   // components/index/tags

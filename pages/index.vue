@@ -12,6 +12,11 @@ export default {
   components: {
     IndexTags,
     IndexPosts
+  },
+  head () {
+    const title = `${this.post.title}`
+    const description = (this.post.description)
+    return this.$seo.head(title, description)
   }
 }
 </script>
