@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  head () {
+  head() {
     const title = `${this.page.title}`
     const description = (this.page.description)
     return this.$seo.head(title, description)

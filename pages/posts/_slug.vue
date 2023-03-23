@@ -17,7 +17,7 @@ export default {
     BlogAlternatives,
     // CommentsNew
   },
-  head () {
+  head() {
     const title = `${this.post.title}`
     const description = (this.post.description)
     return this.$seo.head(title, description)

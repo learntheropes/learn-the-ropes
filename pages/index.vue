@@ -13,7 +13,7 @@ export default {
     IndexTags,
     IndexPosts
   },
-  head () {
+  head() {
     const title = this.$t('title')
     const description = this.$t('description')
     return this.$seo.head(title, description)
