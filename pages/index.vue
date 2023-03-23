@@ -9,7 +9,7 @@
 import IndexTags from '~/components/index/tags'
 import IndexPosts from '~/components/index/posts'
 export default {
-  name: 'Index',
+  name: 'index',
   components: {
     IndexTags,
     IndexPosts
@@ -18,6 +18,6 @@ export default {
     const title = this.$t('title')
     const description = this.$t('description')
     return this.$seo.head(title, description)
-  }
+  },
 }
 </script>
