@@ -142,6 +142,11 @@ export default {
         return getSitemap($content).then(sitemap => sitemap)
       } 
     }],
+
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Sitemap: (process.env.URL) ? `https://${process.env.URL}/sitemap.xml` : 'http://localhost:3000/sitemap.xml',
+    }],
   ],
 
   plugins: [
