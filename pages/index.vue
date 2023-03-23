@@ -9,6 +9,7 @@
 import IndexTags from '~/components/index/tags'
 import IndexPosts from '~/components/index/posts'
 export default {
+  name: 'Index',
   components: {
     IndexTags,
     IndexPosts
