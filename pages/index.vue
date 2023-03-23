@@ -14,8 +14,8 @@ export default {
     IndexPosts
   },
   head () {
-    const title = `${this.post.title}`
-    const description = (this.post.description)
+    const title = this.$t('title')
+    const description = this.$t('description')
     return this.$seo.head(title, description)
   }
 }
