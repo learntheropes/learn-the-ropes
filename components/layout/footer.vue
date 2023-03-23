@@ -2,17 +2,26 @@
   <footer class="footer">
     <div class="level container">
       <div class="level-left">
-        <div class="content">
-          <div class="buttons">
-            <b-button
-              v-for="page in pages"
-              :key="page.path"
-              tag="nuxt-link"
-              :to="localePath({ path: page.path })"
-              class="is-text has-text-primary is-underline-dotted"
-            >
-              {{ page.title }}
-            </b-button>
+        <div class="level-item">
+          <div class="content">
+            <div class="buttons">
+              <b-button
+                tag="nuxt-link"
+                :to="localePath({ name: 'Index' })"
+                class="is-text has-text-primary is-underline-dotted"
+              >
+              {{ $t('home') }}
+              </b-button>
+              <b-button
+                v-for="page in pages"
+                :key="page.path"
+                tag="nuxt-link"
+                :to="localePath({ path: page.path })"
+                class="is-text has-text-primary is-underline-dotted"
+              >
+                {{ page.title }}
+              </b-button>
+            </div>
           </div>
         </div>
       </div>
@@ -27,8 +36,8 @@
                 :to="switchLocalePath(locale.code)"
                 class="is-text has-text-primary is-underline-dotted"
               >
-              {{ locale.name }}
-            </b-button>
+                {{ locale.name }}
+              </b-button>
             </div>
           </div>
         </div>

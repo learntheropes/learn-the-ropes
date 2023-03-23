@@ -12,6 +12,8 @@ export default {
   unauthorized: 'Unauthorized',
   somethingWentWrong: 'Something went wrong',
   backToTheHomePage: 'Back to the home page',
+  // components/layout/footer
+  home: 'Home page',
   // pages/index
   title: 'Learn the ropes',
   description: 'Online privacy and security for a location independent bitcoiner',
