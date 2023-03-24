@@ -2,7 +2,6 @@
   <div class="container">
     <blog-post v-if="post" :post="post" />
     <blog-alternatives v-else :alternatives="alternatives" />
-    <!-- <comments-new :slug="slug" /> -->
   </div>
 </template>
 
@@ -10,12 +9,10 @@
 import { locales } from '~/assets/js/locales'
 import BlogPost from '~/components/posts/post'
 import BlogAlternatives from '~/components/posts/alternatives'
-// import CommentsNew from '~/components/comments/new/index'
 export default {
   components: {
     BlogPost,
-    BlogAlternatives,
-    // CommentsNew
+    BlogAlternatives
   },
   head() {
     const title = `${this.post.title}`
