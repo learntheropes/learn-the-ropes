@@ -16,7 +16,7 @@ Oruga offers a set of components easy to customize and is CSS framewoork agonist
 There are different themes to integrate the components with your favorite grid system and CSS utilities, including [theme-bulma](https://github.com/oruga-ui/theme-bulma) for Bulma.  
 On the Oruga Github there is a [guide](https://github.com/oruga-ui/oruga#using-oruga-with-nuxt) to integrate with Nuxtjs.  
 However the integration is limited, because it doesn't support custom scss/sass styles.  
-On the theme-bulma reademe there is a customization [guide](https://github.com/oruga-ui/theme-bulma#customization-sassscss), however this `@import` order seamswrong to me, I lost some time to figure out why by following it, the customizations were not applied in my project.  
+On the theme-bulma reademe there is a customization [guide](https://github.com/oruga-ui/theme-bulma#customization-sassscss), however this `@import` order seams to be wrong to me, I lost some time to figure out why the customizations were not applied in my project or even repalced with default value, specifically all colors to standard black.
 After a few hours of searches and tests and even a self-resolved Github [issue](https://github.com/oruga-ui/theme-bulma/issues/81), I was able to make all the parts of the puzzle to work nicely in Nuxtjs version 3, to customize the scss variables and to selectively import only the needed components. Here is my implementation:  
 **`package.json`**
 ```json
