@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <blog-post v-if="post" :post="post" />
+    <blog-sandbox v-if="post.sandbox" :src="post.sandbox" />
     <blog-alternatives v-else :alternatives="alternatives" />
   </div>
 </template>
@@ -8,10 +9,12 @@
 <script>
 import { locales } from '~/assets/js/locales'
 import BlogPost from '~/components/posts/post'
+import BlogSandbox from '~/components/posts/sandbox'
 import BlogAlternatives from '~/components/posts/alternatives'
 export default {
   components: {
     BlogPost,
+    BlogSandbox,
     BlogAlternatives
   },
   head() {

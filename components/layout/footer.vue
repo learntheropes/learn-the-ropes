@@ -7,7 +7,7 @@
             <div class="buttons">
               <b-button
                 tag="nuxt-link"
-                :to="localePath({ name: 'Index' })"
+                :to="localePath({ name: 'index' })"
                 class="is-text has-text-primary is-underline-dotted"
               >
               {{ $t('home') }}
