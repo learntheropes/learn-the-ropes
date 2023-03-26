@@ -4,18 +4,21 @@ description: What I assume when I write articles and I expect you assume when yo
 ---
 The articles in this blog are written by a random pleb.  
 I don't consider myself an expert in any of the fields I'm covering.  
-I'm only sharing my personal experiences in these fields.  
+I'm only sharing my personal experiences in these fields. 
+## Goals 
 The main goals of the blog are:
 - Improve my writing skills in **English**, **Spanish**, **Italian**.
-- **Test Nuxt** futures before using them in my production projects.
-- Receive constructive **feedbacks** to improve my knowledge and procedures.
-
-I assume that the audience is not sharing my same views but the same situation:  
+- Test Nuxt futures before using them in my production projects.
+- Receive constructive feedbacks to improve my knowledge and procedures.
+## Assumptions
+- I assume that the audience is not sharing my same views but the same situation:  
 I'm a location independent guy, I spend most of my time between 3 countries and 2 continents.  
 This means I can't relay on a personal home server always powered and online.  
 Therefore, solutions like [Umbrel](https://umbrel.com/) or [self-hosted LND node](https://github.com/lightningnetwork/lnd) are not viable and will not be considered in my articles.  
-I'm particularly interested in investigating alternative solutions for people on my same situation that want to preserve their privacy and security.
-
+- I'm particularly interested in investigating alternative solutions for people on my same situation that want to preserve their privacy and security.  
+- I usually mix three languages, one native and two learned, quite a challenge for an individual not well versed for foreign languages. This blog help me to keep them separeted in differnet folders. If you notice some mixing, let me know in the comment and I will fix it.
+- Finally, my libertarian education started a few years ago when I started investigating Bitcoin. But I come from 30 years of sacolaist family, socialist friends and sicialist edication. If you find something inconsistent in my posts, let me know in the comments and I will do my best to fix it.
+## Contents
 I will write about:
 - **Location independence** (a term that I much prefer over the *digital nomad* buzzword) and all the related matters, with a special focus to **personal finance** for a bitcoiner that still needs to deal with a fiat world.
 - Online **privacy** and **security** (and maybe offline? Who knows, we will see).
