@@ -7,6 +7,7 @@ tags:
   - nuxtjs-3
   - buefy
   - oruga-ui
+sandbox: https://stackblitz.com/edit/github-zcrtvq-ncgkc9?theme=light&embed=1&view=both&showSidebar=1&file=package.json
 ---
 In Nuxtjs version 2 I was used to the beautiful [nuxt-buefy](https://github.com/buefy/nuxt-buefy) UI module based on [Buefy](https://buefy.org/) an [Bulma](https://bulma.io/). A complete framework for front-end components with a clean syntax.  
 Altrought not clearly stated on the repo readme, nuxt-buefy development has been discontinued and the library will not be compatible with Nuxtjs version 3 as [announced](https://github.com/buefy/buefy/issues/2505#issuecomment-997000720) by the project main maintainer [Walter Tommasi](https://github.com/jtommy).   
@@ -17,12 +18,14 @@ There are different themes to integrate the components with your favorite grid s
 On the Oruga Github there is a [guide](https://github.com/oruga-ui/oruga#using-oruga-with-nuxt) to integrate with Nuxtjs.  
 However the integration is limited, because it doesn't support custom scss/sass styles.  
 On the theme-bulma reademe there is a customization [guide](https://github.com/oruga-ui/theme-bulma#customization-sassscss), however this `@import` order seams to be wrong to me, I lost some time to figure out why the customizations were not applied in my project or even repalced with default value, specifically all colors to standard black.
-After a few hours of searches and tests and even a self-resolved Github [issue](https://github.com/oruga-ui/theme-bulma/issues/81), I was able to make all the parts of the puzzle to work nicely in Nuxtjs version 3, to customize the scss variables and to selectively import only the needed components. Here is my implementation:  
+After a few hours of searches and tests and even a self-resolved Github [issue](https://github.com/oruga-ui/theme-bulma/issues/81), I was able to make all the parts of the puzzle to work nicely in Nuxtjs version 3, to customize the scss variables and to selectively import only the needed components. Here is my implementation, node that `sass` and `sass-loader` devDependencies are needed to allow Nodejs to process the scss/sass customization:  
 **`package.json`**
 ```json
 {
   "devDependencies": {
-    "nuxt": "^3.3.1"
+    "nuxt": "^3.3.1",
+    "sass": "^1.52.1",
+    "sass-loader": "^10.2.1"
   },
   "dependencies": {
     "@oruga-ui/oruga-next": "^0.5.10",
@@ -36,7 +39,7 @@ After a few hours of searches and tests and even a self-resolved Github [issue](
 // Without any change
 export default defineNuxtConfig({
   css: [
-    'assets/scss/main.scss'
+    '~/assets/scss/main.scss'
   ]
 })
 ```
