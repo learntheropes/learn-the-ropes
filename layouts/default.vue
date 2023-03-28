@@ -1,38 +1,42 @@
 <template>
-  <div class="is-tall">
-    <main class="is-tall-container">
-      <nuxt />
-    </main>
-    <div v-if="showChevron" class="is-hidden-mobile is-bottom-right">
-      <b-tooltip :label="$t('scrollToTop')" position="is-left">
-        <b-icon icon="chevron-up" type="is-primary" size="is-medium" @click.native="scrollToTop" />
-      </b-tooltip>
-    </div>
-    <layout-footer />
+  <div>
+    <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
+      <Head>
+        <Title>{{ title }}</Title>
+        <template v-for="link in head.link" :key="link.id">
+          <Link :id="link.id" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
+        </template>
+        <template v-for="meta in head.meta" :key="meta.id">
+          <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
+        </template>
+      </Head>
+      <Body>
+        <div>
+          <div class="container">
+            <slot />
+          </div>
+          <LayoutFooter />
+        </div>
+      </Body>
+    </Html>
   </div>
 </template>
 
-<script>
-import layoutFooter from '~/components/layout/footer'
-export default {
-  components: {
-    layoutFooter
+<script setup>
+const i18nHead = useLocaleHead({})
+useHead({
+  htmlAttrs: {
+    lang: (i18nHead) ? i18nHead.value.htmlAttrs.lang : null
   },
-  data: () => ({
-    showChevron: false
-  }),
-  methods: {
-    scrollToTop () {
-      if (process.client) window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
-    }
-  },
-  mounted() {
-    setInterval(() => {
-      this.showChevron = (window.pageYOffset > 0) ? true : false
-    }, 1000)
-  }
-}
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])]
+})
+const { t } = useI18n()
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true
+})
+const title = computed(() => t('title'))
 </script>

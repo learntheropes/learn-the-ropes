@@ -1,8 +1,4 @@
 export default {
-  // blog/_slug
-  toc: 'Tabla de contenidos',
-  published: 'Publicado',
-  updated: 'Actualizado',
   // layoud/editor
   edit: 'Editar',
   // layout/default
@@ -14,13 +10,17 @@ export default {
   backToTheHomePage: 'Volver a la página de inicio',
   // components/layout/footer
   home: 'Página de inicio',
-  // folios/index
+  // pages/index
   title: 'Learn the ropes',
   description: 'Privacidad y seguridad en línea para un bitcoiner nómada digital',
-  // components/index/articles
-  articles: 'Artículos',
   // components/index/tags
   tags: 'Etiquetas',
+  // pages/articles/_slug
+  published: 'Publicado',
+  updated: 'Actualizado',
+  toc: 'Tabla de contenidos',
+  // components/index/articles
+  articles: 'Artículos',
   // components/articles/alternatives
   alt: 'Este contenido no está disponible en tu idioma. Pero puedes lejerlo en: {lang} '
 }
