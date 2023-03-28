@@ -50,7 +50,7 @@ On [Fixed Float](fixedfloat.com), choose the exchange bitcoins over the Lightnin
 The amount to be paid to Njalla willchange every couple of minutes, due to the variations in the Monero exchange rate and the process on Fixed Float can take up to one hour. Don't worry, when Njalla receives your deposit, it will be converted to Euro at the last exchange and you will probably be credited for a different amount then the one you selected, but since I suggested to tup up more then what you actually need, you will still be able to pay for the service. If the amount will be higher, you will have some credit for the next VPS renntal renawal.
 ## Deploy the content
 I will write soon about deploying the website content preserving the privacy.  
-## Altenratives to Njalla
+## Alternatives to Njalla
 [Yohost](https://client.yohost.org/index.php) is an alternative I still have to investigate.  
 From a first check, they offer domains registration, virtual and dedicated private servers, bitcoin payment gateways, LUKS encrpyped private cloud and more.  
 They support Bitcoin as payment method.  
