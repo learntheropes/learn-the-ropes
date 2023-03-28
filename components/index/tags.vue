@@ -3,7 +3,7 @@
     <h2 class="title is-1">{{ $t('tags') }}</h2>
     <ul class="columns is-multiline is-mobile">
       <li v-for="tag in tags" :key="tag" class="column is-narrow">
-        <b-button @click="emitFilteredPostsByTag(tag)" class="is-primary is-outlined is-italic">#{{ tag }}</b-button>
+        <b-button @click="emitFilteredArticlesByTag(tag)" class="is-primary is-outlined is-italic">#{{ tag }}</b-button>
       </li>
     </ul>
   </div>
@@ -18,17 +18,17 @@ export default {
   }),
   async fetch() {
 
-    const posts = await this.$content( 'posts', this.$i18n.locale)
+    const articles = await this.$content( this.$i18n.locale, 'articles')
       .only(['tags'])
       .fetch()
 
-    this.tags = uniq(flatten(posts.map(post => post.tags)))
+    this.tags = uniq(flatten(articles.map(article => article.tags)))
   },
   methods: {
-    async emitFilteredPostsByTag(tag) {
+    async emitFilteredArticlesByTag(tag) {
 
       if (process.server) return
-      this.$nuxt.$emit('emitFilteredPostsByTag', tag)
+      this.$nuxt.$emit('emitFilteredArticlesByTag', tag)
     }
   }
 }

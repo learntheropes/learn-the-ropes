@@ -13,13 +13,13 @@
               {{ $t('home') }}
               </b-button>
               <b-button
-                v-for="page in pages"
-                :key="page.path"
+                v-for="folio in folios"
+                :key="folio.path"
                 tag="nuxt-link"
-                :to="localePath({ path: page.path })"
+                :to="localePath({ path: folio.path })"
                 class="is-text has-text-primary is-underline-dotted"
               >
-                {{ page.title }}
+                {{ folio.title }}
               </b-button>
             </div>
           </div>
@@ -49,17 +49,12 @@
 <script>
 export default {
   data: () => ({
-    pages: []
+    folios: []
   }),
   async fetch() {
-    const pages = await this.$content( 'pages', this.$i18n.locale)
+    this.folios = await this.$content( this.$i18n.locale, 'folios')
       .only(['title', 'path'])
       .fetch()
-
-      this.pages = pages.map((page) => ({
-        ...page,
-        path: page.path.replace(`/${this.$i18n.locale}`, ''),
-      }))
   },
   computed: {
     availableLocales() {

@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <index-tags />
-    <index-posts />
+    <index-articles />
   </div>
 </template>
 
 <script>
 import IndexTags from '~/components/index/tags'
-import IndexPosts from '~/components/index/posts'
+import IndexArticles from '~/components/index/articles'
 export default {
   name: 'index',
   components: {
     IndexTags,
-    IndexPosts
+    IndexArticles
   },
   head() {
     const title = this.$t('title')

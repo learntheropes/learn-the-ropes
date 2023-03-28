@@ -14,13 +14,13 @@ export default {
   backToTheHomePage: 'Back to the home page',
   // components/layout/footer
   home: 'Home page',
-  // pages/index
+  // folios/index
   title: 'Learn the ropes',
   description: 'Online privacy and security for a location independent bitcoiner',
-  // components/index/posts
+  // components/index/articles
   articles: 'Articles',
   // components/index/tags
   tags: 'Hashtags',
-  // components/posts/alternatives
+  // components/articles/alternatives
   alt: 'This content is not available in your language. But you can read it in: {lang} '
 }

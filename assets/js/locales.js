@@ -92,9 +92,9 @@ const getDinamicRoutes = ($content, folder) => {
 
 export const getSitemap = ($content) => {
   const statics = getStatics()
-  const posts = getDinamicRoutes($content, 'posts')
-  const pages = getDinamicRoutes($content, 'pages')
-  return Promise.all([statics, posts, pages]).then(values => {
+  const articles = getDinamicRoutes($content, 'articles')
+  const folios = getDinamicRoutes($content, 'folios')
+  return Promise.all([statics, articles, folios]).then(values => {
     return [].concat.apply([], values)
   })
 }
@@ -116,9 +116,9 @@ const generateRoutesByFolder = ($content, folder) => {
 }
 
 export const generateRoutes = ($content) => {
-  const posts = generateRoutesByFolder($content, 'posts')
-  const pages = generateRoutesByFolder($content, 'pages')
-  return Promise.all([posts, pages]).then(values => {
+  const articles = generateRoutesByFolder($content, 'articles')
+  const folios = generateRoutesByFolder($content, 'folios')
+  return Promise.all([articles, folios]).then(values => {
     return [].concat.apply([], values)
   })
 }

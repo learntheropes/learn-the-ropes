@@ -14,13 +14,13 @@ export default {
   backToTheHomePage: 'Volver a la página de inicio',
   // components/layout/footer
   home: 'Página de inicio',
-  // pages/index
+  // folios/index
   title: 'Learn the ropes',
   description: 'Privacidad y seguridad en línea para un bitcoiner nómada digital',
-  // components/index/posts
+  // components/index/articles
   articles: 'Artículos',
   // components/index/tags
   tags: 'Etiquetas',
-  // components/posts/alternatives
+  // components/articles/alternatives
   alt: 'Este contenido no está disponible en tu idioma. Pero puedes lejerlo en: {lang} '
 }

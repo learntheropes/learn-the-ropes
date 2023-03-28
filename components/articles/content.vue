@@ -2,41 +2,41 @@
   <div>
     <section class="section">
       <h1 class="title is-1 has-text-primary">
-        {{ post.title }}
+        {{ article.title }}
       </h1>
       <div class="subtitle is-5">
-        {{ post.description }}
+        {{ article.description }}
       </div>
       <div class="block is-italic">
-        {{$t('published')}} {{ $moment(post.createdAt).fromNow() }} 
+        {{$t('published')}} {{ $moment(article.createdAt).fromNow() }} 
         <span v-if="isUpdated">
           <br class="is-hidden-tablet">
           <span class="is-hidden-mobile"> | </span>
-          {{$t('updated')}} {{ $moment(post.updatedAt).fromNow() }}
+          {{$t('updated')}} {{ $moment(article.updatedAt).fromNow() }}
         </span>
       </div>
     </section>
-    <blog-toc :toc="post.toc" />
+    <article-toc :toc="article.toc" />
     <section class="section">
       <div class="content">
-        <nuxt-content :document="post" />
+        <nuxt-content :document="article" />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import BlogToc from '~/components/posts/toc'
+import ArticleToc from '~/components/articles/toc'
 export default {
   components: {
-    BlogToc
+    ArticleToc
   },
   props: [
-    'post'
+    'article'
   ],
   computed: {
     isUpdated() {
-      return this.post.createdAt !== this.post.updatedAt
+      return this.article.createdAt !== this.article.updatedAt
     }
   }
 }

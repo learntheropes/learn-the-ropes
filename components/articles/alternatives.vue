@@ -19,7 +19,7 @@ export default {
   ],
   methods: {
     code(path) {
-      return path.split('/')[2]
+      return path.split('/')[1]
     },
     slug(path) {
       return path.split('/')[3]
@@ -31,7 +31,7 @@ export default {
     link(path) {
       const code = this.code(path)
       const slug = this.slug(path)
-      return `/${code}/posts/${slug}`
+      return `/${code}/articles/${slug}`
     }
   }
 }

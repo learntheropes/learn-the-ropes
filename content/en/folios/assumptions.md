@@ -2,9 +2,9 @@
 title: Assumptions
 description: What I assume when I write articles and I expect you assume when you comment.
 ---
-The articles in this blog are written by a random pleb.  
-I don't consider myself an expert in any of the fields I'm covering.  
-I'm only sharing my personal experiences in these fields. 
+The articles in this blog are written by a random pleb.  
+I don't consider myself an expert in any of the fields I'm covering.  
+I'm only sharing my personal experiences in these fields.  
 ## Goals 
 The main goals of the blog are:
 - Improve my writing skills in **English**, **Spanish**, **Italian**.
@@ -18,7 +18,7 @@ Therefore, solutions like [Umbrel](https://umbrel.com/) or [self-hosted LND node
 - I'm particularly interested in investigating alternative solutions for people on my same situation that want to preserve their privacy and security.  
 - If I mention a service, it is because I have used it personally. I share my personal experiences, that in some cases can be different than yours. If I have not tested a specific feature of the service, I usually don’t write about it. In the few case I do, I clearly outline that.   
 - I usually mix three languages, one native and two learned, quite a challenge for an individual not well versed for foreign languages. This blog help me to keep them separeted in differnet folders. If you notice some mixing, let me know in the comment and I will fix it.
-- Finally, my libertarian education started a few years ago when I started investigating Bitcoin. But I come from 30 years of sacolaist family, socialist friends and sicialist edication. If you find something inconsistent in my posts, let me know in the comments and I will do my best to fix it.
+- Finally, my libertarian education started a few years ago when I started investigating Bitcoin. But I come from 30 years of sacolaist family, socialist friends and sicialist edication. If you find something inconsistent in my articles, let me know in the comments and I will do my best to fix it.
 ## Contents
 I will write about:
 - **Location independence** (a term that I much prefer over the *digital nomad* buzzword) and all the related matters, with a special focus to **personal finance** for a *bitcoiner* that still needs to deal with a fiat world.
