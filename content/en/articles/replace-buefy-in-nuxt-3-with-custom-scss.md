@@ -73,7 +73,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 $custom: hsl(268, 68%, 56%) !default;
 $primary: $custom;
 ```
-Optionally, if only a few components are needed, they can be selectively imported, reducing the bundle size.  
+If only a few components are needed, they can be selectively imported, reducing the bundle size.  
 For instance, if only the button and the dropdown components are needed, the **`plugins/oruga.js`** function would be:
 ```js
 import { defineNuxtPlugin } from '#app'
