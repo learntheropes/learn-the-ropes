@@ -49,7 +49,14 @@ On Njalla, select the option to add funds to the wallet. When you choose an amou
 On [Fixed Float](fixedfloat.com), choose the exchange bitcoins over the Lightning Network for Monero, for the amount requested by Njalla and I provided the Njalla address for the withdraw and and finally select the fixed rate as order type.  
 The amount to be paid to Njalla willchange every couple of minutes, due to the variations in the Monero exchange rate and the process on Fixed Float can take up to one hour. Don't worry, when Njalla receives your deposit, it will be converted to Euro at the last exchange and you will probably be credited for a different amount then the one you selected, but since I suggested to tup up more then what you actually need, you will still be able to pay for the service. If the amount will be higher, you will have some credit for the next VPS renntal renawal.
 ## Deploy the content
-In a new aricle I will investigate how to deploy the website content preserving the privacy.  
+I will write soon about deploying the website content preserving the privacy.  
+## Altenratives to Njalla
+[Yohost](https://client.yohost.org/index.php) is an alternative I still have to investigate.  
+From a first check, they offer domains registration, virtual and dedicated private servers, bitcoin payment gateways, LUKS encrpyped private cloud and more.  
+They support Bitcoin as payment method.  
+They have a [PGP public key](https://client.yohost.org/index.php/knowledgebase/2/Our-PGP-Public-Key.html) for secured communication.  
+When you register a domain, if contact information are not provided, domain privacy protection is authomatically enabled ond shown on whois. 
+
 [^LightningNetwork]: The Bitcoin Lightning Network is a layer-two solution built on top of the Bitcoin blockchain that aims to solve some of the scalability and privacy issues of on-chain Bitcoin transactions.  
     One of the key privacy features of the Lightning Network is that transactions are not broadcasted to the entire Bitcoin network. Instead, they are only visible to the two parties involved in the transaction, providing a higher level of privacy and anonymity.  
     In addition, Lightning Network transactions are much faster and cheaper than on-chain Bitcoin transactions. This is because Lightning Network transactions are conducted off-chain, which means that they don't have to be verified by every node in the Bitcoin network. As a result, they can be processed almost instantly and at a fraction of the cost of on-chain transactions.  
