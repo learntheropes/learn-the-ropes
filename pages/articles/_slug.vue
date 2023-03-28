@@ -2,7 +2,7 @@
   <div class="container">
     <article-content v-if="article" :article="article" />
     <article-sandbox v-if="article && article.sandbox" :src="article.sandbox" />
-    <article-alternatives v-else :alternatives="alternatives" />
+    <article-alternatives v-if="!article" :alternatives="alternatives" />
   </div>
 </template>
 
