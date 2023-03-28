@@ -51,7 +51,7 @@ const getStatics = () => {
 const getDinamicRoutes = ($content, folder) => {
   const routes = []
   const getRoutesByLocale = ($content, locale) => {
-    $content(folder, locale.code)
+    $content(locale.code, folder)
       .only(['path'])
       .fetch()
       .then(routesByLocale => {
@@ -65,23 +65,26 @@ const getDinamicRoutes = ($content, folder) => {
                 url: `${folder}/${slug}/`
               }]
             }
-            const promises = hreflangs.filter(newLocale => newLocale.code !== locale.code && newLocale.iso !== 'x-default').map(newLocale => {
-              const exists = $content(folder, newLocale.code, slug)
-              .fetch()
-              .catch(err => ({
-                extension: false
-              }))
-              return exists         
-            })
-            Promise.all(promises).then((translationsExists) => {
-              translationsExists.filter(translationLocale => translationLocale.extension).forEach((translationLocale) => {
-                const code = translationLocale.path.split('/')[2]
+            const promises = hreflangs
+              .filter(newLocale => newLocale.iso !== 'x-default')
+              .map(newLocale => {
+                const exists = $content(newLocale.code, folder, slug)
+                .fetch()
+                .catch(err => ({
+                  extension: false
+                }))
+                return exists         
+              })
+            Promise.all(promises).then((translationsExists) => translationsExists
+              .filter(translationLocale => translationLocale.extension)
+              .forEach((translationLocale) => {
+                const code = translationLocale.path.split('/')[1]
                 obj.links.push({
                   lang: find(hreflangs, { code: `/${code}` }).iso,
                   url: `${code}/${folder}/${slug}/`
                 })
               })
-            })
+            )
             routes.push(obj)
           })      
       })
@@ -102,7 +105,7 @@ export const getSitemap = ($content) => {
 const generateRoutesByFolder = ($content, folder) => {
   const routes = []
   const getSlugs = ($content, locale) => {
-    $content(folder, locale.code)
+    $content(locale.code, folder)
     .only(['slug'])
     .fetch()
     .then(slugs => {
