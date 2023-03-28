@@ -26,7 +26,7 @@ flatpak run com.github.micahflee.torbrowser-launcher
 For different operating systems, you can download it from the [official page](https://www.torproject.org/download/).  
 ## Create a secure Proton email under tor 
 *Proton is a Swiss-based company that provides secure and private communication solutions for individuals and businesses, under free  and paid plans. The company was founded in 2014 and has since then established itself as a leading provider of encrypted email, VPN, and online storage services. Proton is known for its strong commitment to privacy and security, and its services are designed to protect user data from prying eyes and unauthorized access. Proton solutions are trusted by millions of users worldwide, and the company continues to innovate and expand its offerings to meet the growing demand for secure online communication.*  
-They have a [clearnet website](https://proton.me/) and a [hidden service](https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion).  
+They have a [clearnet website](https://proton.me/) and a [onion service](https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion).  
 Connect the Tor Browser and browse to the hideen service [registration page](https://account.protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/signup?plan=free&product=mail) and register a new email address.  
 If you are asked for verification, use the captcha method, not an existing email address.  
 Skip to provide a recovery phone number and a recovery email address. 
@@ -36,7 +36,7 @@ Still under `Setting`, visit the `Encryption and keys` tab and under the `Email 
 ## Buy a domain and a VPS on Njalla
 *Njalla is a domain registrar based in Sweden that prioritizes the protection of users' privacy. When purchasing a domain through a typical registrar, you're required to provide personal information such as your name, address, phone number, email address, and payment details. Even if you opt for Whois protection to keep this information hidden from the public, the registrar still has access to it. In contrast, Njalla offers a privacy-aware service and doesn't ask for your personal information.*  
 They offer domain registration, VPS, DNS and VPN.  
-They have a [clearner website](https://njal.la) and an [hidden service](https://njallalafimoej5i4eg7vlnqjvmb6zhdh27qxcatdn647jtwwwui3nad.onion).  
+They have a [clearner website](https://njal.la) and an [onion service](https://njallalafimoej5i4eg7vlnqjvmb6zhdh27qxcatdn647jtwwwui3nad.onion).  
 Connect the Tor Browser and browse to the hideen service [registration page](https://njallalafimoej5i4eg7vlnqjvmb6zhdh27qxcatdn647jtwwwui3nad.onion/signup).  
 Register an account and login using the Proton email registered before and add a domain of you choice and a Virtual Private Server to your cart.  
 Under the `Account` > `Settings` page, enable the two factor authentication and past the PGP public key that you saved before on Poton, this way all the comunication with Njalla will be encrypted.  
