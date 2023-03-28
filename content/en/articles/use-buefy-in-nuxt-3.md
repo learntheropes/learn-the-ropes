@@ -89,3 +89,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Config, bulmaConfig)
 })
 ```
+Now that the working enviroment is ready, it's time to update the existing templates.  
+The oruga components keep the same naming format of buefy axcept for the prefix: `<b-field>` is now `<o-field>` and so on.  
+It's just a matter of searching and replacing `<b-` with `<o-` in you files.  
+There are justa few missing buefy components, not yet implemented in oruga. Thy are listed [here](https://github.com/oruga-ui/theme-bulma#buefy-users). At the moment they are: Carousel, Dialog, Navbar and Menu.  
