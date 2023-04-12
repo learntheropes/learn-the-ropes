@@ -43,7 +43,7 @@ export default {
           hid: 'og:site_name',
           property: 'og:site_name',
           itemprop: 'og:site_name',
-          content: 'Paraguay XP'
+          content: 'Giovanni Lerantheropes'
         },
         {
           hid: 'twitter:card',
