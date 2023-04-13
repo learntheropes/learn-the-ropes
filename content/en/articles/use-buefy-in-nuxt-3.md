@@ -60,8 +60,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 ```scss
 // This configuration can be merged in the own file
 // Without any change
-@import '@oruga-ui/oruga-next/src/scss/oruga-full-vars';
 @import 'assets/scss/custom';
+@import '@oruga-ui/oruga-next/src/scss/oruga-full-vars';
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/bulma';
 @import '@oruga-ui/theme-bulma/dist/scss/bulma';
