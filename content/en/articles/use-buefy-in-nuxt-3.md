@@ -60,17 +60,18 @@ export default defineNuxtPlugin((nuxtApp) => {
 ```scss
 // This configuration can be merged in the own file
 // Without any change
-@import 'assets/scss/custom'
-@import 'bulma/sass/utilities/_all'
-@import 'bulma/bulma'
-@import '@oruga-ui/theme-bulma/dist/scss/bulma'
+@import '@oruga-ui/oruga-next/src/scss/oruga-full-vars';
+@import 'assets/scss/custom';
+@import 'bulma/sass/utilities/_all';
+@import 'bulma/bulma';
+@import '@oruga-ui/theme-bulma/dist/scss/bulma';
 ```
 #### **`assets/scss/style.scss`**
 ```scss
 // Here is where finally the custom configuations are set
 // The file needs to be adapt to the own requiremenets
-$custom: hsl(268, 68%, 56%) !default
-$primary: $custom
+$custom: hsl(268, 68%, 56%) !default;
+$primary: $custom;
 ```
 Optionally, if only a few components are needed, they can be selectively imported, reducing the bundle size.  
 For instance, if only the button and the dropdown components are needed, the Oruga plugin would be:
