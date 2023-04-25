@@ -58,6 +58,14 @@ export default {
           content: 'notranslate'
         },
         ...(i18nHead.meta || [])
+      ],
+       link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/icons/favicon.ico'
+        },
+        ...(i18nHead.link || [])
       ]
     }
   },
