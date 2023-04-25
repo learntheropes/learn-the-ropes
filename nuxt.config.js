@@ -63,7 +63,7 @@ export default {
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/icons/favicon.ico'
+          href: '/favicon.ico'
         },
         ...(i18nHead.link || [])
       ]
